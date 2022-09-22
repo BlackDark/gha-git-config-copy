@@ -1,23 +1,30 @@
-# Hello world JavaScript action
+# Git config copy authorization header
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action copies the authorization header temporary to the global config and deletes it at the end with the post script.
 
 ## Inputs
 
-### `who-to-greet`
+| property name | value type | default value | description                                           |
+| ------------- | ---------- | ------------- | ----------------------------------------------------- |
+| `token`       | string     | **n/a**       | **required** value for git user.password and GIT_USER |
 
-**Required** The name of the person to greet. Default `"World"`.
+The minimally required action configuration requires a token being explicitly specified.
+Example below uses secrets.GITHUB_TOKEN available to the workflow as a token source.
+
+```
+- uses: BlackDark/gha-git-config-copy@main
+  with:
+    token: '${{ secrets.GITHUB_TOKEN }}'
+```
 
 ## Outputs
 
-### `time`
-
-The time we greeted you.
+No outputs produced.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@main
-with:
-  who-to-greet: 'Mona the Octocat'
+- uses: BlackDark/gha-git-config-copy@main
+  with:
+    token: "${{ secrets.GITHUB_TOKEN }}"
 ```

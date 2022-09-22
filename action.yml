@@ -1,13 +1,15 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+---
+name: "Copy git authorization to global"
+description: "Copies the temporary token to global git config"
+author: "BlackDark"
+branding:
+  icon: "log-in"
+  color: "blue"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  token:
+    description: "Token to be used as x-access-token auth. As default use secrets.GITHUB_TOKEN "
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: "node12"
+  main: "dist/index.js"
+  post: "dist/cleanup/index.js"

@@ -17,7 +17,7 @@ const exec = (cmd, args = []) =>
   });
 
 const main = async () => {
-  await exec("bash", [path.join(__dirname, "./action.sh")]);
+  await exec("bash", [path.join(__dirname, "./cleanup.sh")]);
 };
 
 main().catch((err) => {
