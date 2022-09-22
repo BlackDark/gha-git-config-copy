@@ -9,6 +9,9 @@ inputs:
   token:
     description: "Token to be used as x-access-token auth. As default use secrets.GITHUB_TOKEN "
     required: true
+  gitConfigPath:
+    description: "Path where the extraheader should be stored."
+    default: "http.extraheader"
 runs:
   using: "node12"
   main: "dist/index.js"

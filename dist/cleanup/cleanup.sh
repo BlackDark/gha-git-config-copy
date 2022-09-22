@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-git config --global --unset http.extraheader
+git config --global --unset "$INPUT_GITCONFIGPATH"
