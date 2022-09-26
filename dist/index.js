@@ -60,10 +60,17 @@ var __webpack_exports__ = {};
 (() => {
 const spawn = (__nccwpck_require__(81).spawn);
 const path = __nccwpck_require__(17);
-
 const exec = (cmd, args = []) =>
   new Promise((resolve, reject) => {
     console.log(`Started: ${cmd} ${args.join(" ")}`);
+
+    const AUTH_URL = process.env.GITHUB_SERVER_URL.replace(
+      /(https?:\/\/)/,
+      `$1GithubActions:${process.env.INPUT_TOKEN}@`
+    );
+
+    process.env.CACHE_URL = `${AUTH_URL}/${process.env.GITHUB_REPOSITORY}`;
+
     const app = spawn(cmd, args, { stdio: "inherit" });
     app.on("close", (code) => {
       if (code !== 0) {
