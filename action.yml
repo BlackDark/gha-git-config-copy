@@ -1,17 +1,14 @@
 ---
-name: "Copy git authorization to global"
-description: "Copies the temporary token to global git config"
+name: "Inject token for current repo/domain cache"
+description: "Uses the provided token to load into the credential cache manager of git to use it globally. After execution the cache will be cleared."
 author: "BlackDark"
 branding:
   icon: "log-in"
   color: "blue"
 inputs:
   token:
-    description: "Token to be used as x-access-token auth. As default use secrets.GITHUB_TOKEN "
+    description: "Token for authentication. As default use secrets.GITHUB_TOKEN"
     required: true
-  gitConfigPath:
-    description: "Path where the extraheader should be stored."
-    default: "http.extraheader"
 runs:
   using: "node12"
   main: "dist/index.js"
