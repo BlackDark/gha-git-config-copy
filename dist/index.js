@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 81:
+/***/ 317:
 /***/ ((module) => {
 
 "use strict";
@@ -9,7 +9,7 @@ module.exports = require("child_process");
 
 /***/ }),
 
-/***/ 17:
+/***/ 928:
 /***/ ((module) => {
 
 "use strict";
@@ -56,10 +56,8 @@ module.exports = require("path");
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-const spawn = (__nccwpck_require__(81).spawn);
-const path = __nccwpck_require__(17);
+const spawn = (__nccwpck_require__(317).spawn);
+const path = __nccwpck_require__(928);
 const exec = (cmd, args = []) =>
   new Promise((resolve, reject) => {
     console.log(`Started: ${cmd} ${args.join(" ")}`);
@@ -92,8 +90,6 @@ main().catch((err) => {
   console.error(err.stack);
   process.exit(err.code || -1);
 });
-
-})();
 
 module.exports = __webpack_exports__;
 /******/ })()
