@@ -5,7 +5,7 @@ JavaScript GitHub Action that injects a token into Git's credential cache and re
 ## Verify
 
 - `mise run check`: `npm ci` and both ncc bundles.
-- CI additionally requires `git diff --exit-code -- dist`; commit every generated change.
+- CI additionally requires `git diff --exit-code HEAD -- dist`; commit every generated change.
 - CodeQL, actionlint, zizmor, and strict Renovate validation run alongside the build.
 
 ## Stack
