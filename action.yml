@@ -10,6 +10,6 @@ inputs:
     description: "Token for authentication. As default use secrets.GITHUB_TOKEN"
     required: true
 runs:
-  using: "node12"
+  using: "node24"
   main: "dist/index.js"
   post: "dist/cleanup/index.js"
