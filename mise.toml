@@ -1,0 +1,7 @@
+[tools]
+actionlint = "1.7.12"
+node = "26.13.1"
+
+[tasks.check]
+description = "Install and build the action bundles"
+run = "npm ci && npm run build"
